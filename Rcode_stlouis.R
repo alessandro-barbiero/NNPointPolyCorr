@@ -16,16 +16,16 @@ cor(x,y)
 # scatter-plot
 op<-par()
 par(mai=c(0.75,0.75,0.25,0.1), mgp=c(2.5,1,0))
-plot(x,y,axes=FALSE,xlab=expression(G),ylab=expression(R[1]), pch=20)
+plot(y,x,axes=FALSE,ylab=expression(X[2*scriptstyle(D)]),xlab=expression(X[1]), pch=20)
 # Calculate frequency of each pair
-pairs_freq <- table(paste(x, y))
+pairs_freq <- table(paste(y, x))
 # Adjust point size based on frequency
 for (pair in names(pairs_freq)) {
   pair_values <- as.numeric(strsplit(pair, " ")[[1]])
   points(pair_values[1], pair_values[2], pch=20, cex=sqrt(pairs_freq[pair]))
 }
-axis(2)
-axis(1,at=c(1,2,3))
+axis(2,at=c(1,2,3))
+axis(1)
 box()
 par(op)
 # 1.
@@ -36,7 +36,8 @@ library(VineCopula)
 u <- pobs(cbind(x,y), ties.method="first")
 BiCopSelect(u[,1],u[,2])
 library(copula)
-cop<-frankCopula(dim=2, param=2.48)
+cop<-frankCopula(dim=2, param=2.48) # or 2.700245
+cop<-frankCopula(dim=2, param=2.700245) # or 2.700245
 # estimation of the margins
 table(x)
 hist(y)
@@ -102,7 +103,7 @@ layout(matrix(c(1, 2), ncol = 1), heights = c(2, 5))
 par(mar = c(0, 4, 0, 2) + 0.1, mgp=c(1,1,0))
 plot(function(x) dweibull(x, shape=sh, scale=sc),xaxt = "n",yaxt="n", xlim=c(70,140),xlab="", ylab="pdf")
 par(mar = c(4, 4, 0, 2) + 0.1, mgp=c(2.5,1,0))
-cp <- contour(dist, dMvdc, n.grid=36, xlim=c(70,140), ylim=c(70,140),xlab=expression(C),ylab=expression(R[1]))
+cp <- contour(dist, dMvdc, n.grid=36, xlim=c(70,140), ylim=c(70,140),xlab=expression(X[1]),ylab=expression(X[2]))
 layout(1)
 par(op)
 # a piece of simulation for checking the results
