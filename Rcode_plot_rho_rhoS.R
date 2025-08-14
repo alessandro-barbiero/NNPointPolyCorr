@@ -5,7 +5,8 @@
 # UNIFORM
 # or
 # EXPONENTIAL MARGINS
-
+library(copula)
+library(cubature)
 n <- 1000
 rho.v <- (1:n)/n
 # vector or rho values between 0.001 and 1 with constant step=0.001
@@ -43,6 +44,8 @@ points(0.6,0.6,pch=1)
 legend(x="bottomright", col=c("black","blue","red"), text.col=c("black","blue","red"), legend=c("normal", "uniform","exp"), pch=c(1,8,12))
 
 abline(0,1,col="black")
+
+# --> Figure 3
 
 
 # PLOT OF SPEARMAN'S RHO and PEARSON'S RHO as FUNCTIONS of the COPULA PARAMETER
@@ -127,4 +130,4 @@ legend(x="bottomright", col=c("blue","red"), text.col=c("blue","red"), legend=c(
 
 # save(list=ls(),file="rhorhoSClayton.Rdata")
 
-
+# --> Figure 4
