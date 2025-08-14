@@ -27,6 +27,7 @@ for (pair in names(pairs_freq)) {
 axis(2,at=c(1,2,3))
 axis(1)
 box()
+#  --> Figure 8
 par(op)
 # 1.
 # estimation of the copula using BiCopSelect and the ranks for both variables
@@ -105,7 +106,9 @@ plot(function(x) dweibull(x, shape=sh, scale=sc),xaxt = "n",yaxt="n", xlim=c(70,
 par(mar = c(4, 4, 0, 2) + 0.1, mgp=c(2.5,1,0))
 cp <- contour(dist, dMvdc, n.grid=36, xlim=c(70,140), ylim=c(70,140),xlab=expression(X[1]),ylab=expression(X[2]))
 layout(1)
+#  --> Figure 9
 par(op)
+
 # a piece of simulation for checking the results
 set.seed(0123)
 s <- rMvdc(100000,dist)
