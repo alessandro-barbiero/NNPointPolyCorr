@@ -1,4 +1,5 @@
-# Discretized distributions examined in the Section Point-polyserial correlation under non-normality
+# Discretized distributions examined in the Section
+# Point-polyserial correlation under non-normality
 op <- par()
 par(mfrow=c(3,3), mai=c(0.33,0.3,0.33,0.12), mgp=c(2,1,0),cex=.75)
 ylim=c(0,1)
@@ -36,3 +37,4 @@ f<-c(1/2,1/4,1/6,1/12)
 barplot(f,names.arg = 1:4, ylim=ylim,main="4-asym")
 box()
 par(op)
+# --> Figure 5
